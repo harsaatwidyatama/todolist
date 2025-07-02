@@ -28,12 +28,13 @@
 	</div>
 	<div class="container">
 		<div class="row">
-			<div class="col-6">
+			<div class="col-4">
 			
 			<form method="POST">
 			  <input type="text" name="new_value">
 			  <input type="submit" name="submit" value="Tambah Pekerjaan">
 		   </form>
+			<br>
    
 		<?php
 		$tasks = [
@@ -46,6 +47,10 @@
 		//tambah form
 		array_push($tasks, ['id' => 4,'title' => 'Tugas Individu', 'status' => 'belum']);
 		
+		//kurang form
+		function hapus() {
+		array_pop($tasks);
+		}
 		
 		echo '<table border="1">';
 		echo '<tr><th style="width:50%">Pekerjaan</th><th>Status</th><th>Tindakan</th></tr>';
@@ -61,6 +66,10 @@
             echo "<a href='hapus.php?id=".$task['id']."'>Hapus</a>";
             echo "</td>";
 
+			echo '<td>';
+			echo '<input type="checkbox" value ="" name="todelete[]" />';
+			echo'</td>'; 
+
             echo "</tr>";
 		}
 		
@@ -68,8 +77,10 @@
 		echo '</table>';
 		?>
 		
+
+		
 			</div>
-		</div>
+
 	</div>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.7/dist/js/bootstrap.bundle.min.js" integrity="sha384-ndDqU0Gzau9qJ1lfW4pNLlhNTkCfHzAVBReH9diLvGRem5+R9g2FzA8ZGN954O5Q" crossorigin="anonymous"></script>
   </body>
