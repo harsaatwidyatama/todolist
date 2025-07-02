@@ -28,7 +28,7 @@
 	</div>
 	<div class="container">
 		<div class="row">
-			<div class="col-4">
+			<div class="col-6">
 			
 			<form method="POST">
 			  <input type="text" name="new_value">
